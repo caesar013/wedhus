@@ -14,8 +14,8 @@
 
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/components.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/components.css') }}">
 </head>
 
 <body>
@@ -29,14 +29,14 @@
                         <h4 class="text-dark font-weight-normal">Welcome to <span class="font-weight-bold">Wedhus</span>
                         </h4>
                         <p class="text-muted">Before you get started, you must login.</p>
-                        <form method="POST" action="#" class="needs-validation" novalidate="">
+                        <form method="POST" action="{{ url('login') }}" class="needs-validation" novalidate="">
                             @csrf
                             <div class="form-group">
-                                <label for="username">Username</label>
-                                <input id="username" type="username" class="form-control" name="username" tabindex="1"
+                                <label for="email">Email</label>
+                                <input id="email" type="email" class="form-control" name="email" tabindex="1"
                                     required autofocus>
                                 <div class="invalid-feedback">
-                                    Please fill in your Username
+                                    Please fill in your email
                                 </div>
                             </div>
 
@@ -63,7 +63,8 @@
                         </form>
 
                         <div class="text-center mt-5 text-small">
-                            Copyright &copy; <a href="https://github.com/mromdoni101102">inod</a> and <a href="https://github.com/caesar013">caesar</a>. Made with 💙 by Stisla
+                            Copyright &copy; <a href="https://github.com/mromdoni101102">inod</a> and <a
+                                href="https://github.com/caesar013">caesar</a>. Made with 💙 by Stisla
                         </div>
                     </div>
                 </div>
@@ -94,7 +95,7 @@
             if (hours >= 5 && hours < 12) {
                 dateElement.textContent = "Good Morning";
             } else if (hours >= 12 && hours < 18) {
-                dateElement.textContent = "Good Morning";
+                dateElement.textContent = "good afternoon";
             } else {
                 dateElement.textContent = "Good Evening";
             }
@@ -113,11 +114,11 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="{{asset('assets/js/stisla.js')}}"></script>
+    <script src="{{ asset('assets/js/stisla.js') }}"></script>
 
     <!-- Template JS File -->
-    <script src="{{asset('assets/js/scripts.js')}}"></script>
-    <script src="{{asset('assets/js/custom.js')}}"></script>
+    <script src="{{ asset('assets/js/scripts.js') }}"></script>
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
 </body>
 
 </html>
