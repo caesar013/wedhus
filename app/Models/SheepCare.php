@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class SheepCare extends Model
 {
-    use HasFactory;
+    use HasFactory, Sluggable;
 
     protected $guarded = [];
 
@@ -19,5 +20,24 @@ class SheepCare extends Model
     public function care()
     {
         return $this->belongsTo(Care::class, 'care_id', 'id');
+    }
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'slugcare'
+            ]
+        ];
+    }
+
+    public function getSlugcareAttribute()
+    {
+        return 'care-' . $this->care->name . '-for-' . $this->sheep->code;
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }

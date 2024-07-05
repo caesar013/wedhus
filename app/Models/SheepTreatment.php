@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class SheepTreatment extends Model
 {
-    use HasFactory;
+    use HasFactory, Sluggable;
 
     protected $guarded = [];
 
@@ -24,5 +25,24 @@ class SheepTreatment extends Model
     public function treatment()
     {
         return $this->belongsTo(Treatment::class, 'treatment_id', 'id');
+    }
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'slugtreatment'
+            ]
+        ];
+    }
+
+    public function getSlugtreatmentAttribute()
+    {
+        return 'treatment-' . $this->treatment->name . '-for-' . $this->sheep->code;
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }
