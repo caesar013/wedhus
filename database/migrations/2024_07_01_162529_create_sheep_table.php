@@ -18,6 +18,7 @@ return new class extends Migration
             $table->enum('status', ['sehat', 'mati', 'sakit', 'bunting'])->default('sehat');
             $table->decimal('weight', 5, 2)->default(0);
             $table->date('date_of_entry');
+            $table->unsignedBigInteger('farm_id');
             $table->timestamps();
         });
     }

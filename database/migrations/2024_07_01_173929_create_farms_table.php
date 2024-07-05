@@ -16,8 +16,6 @@ return new class extends Migration
             $table->string('slug', 100)->nullable();
             $table->unsignedBigInteger('foldtype_id');
             $table->foreign('foldtype_id')->references('id')->on('foldtypes')->restrictOnDelete();
-            $table->unsignedBigInteger('sheep_id')->nullable();
-            $table->foreign('sheep_id')->references('id')->on('sheep')->nullOnDelete();
             $table->timestamps();
         });
     }

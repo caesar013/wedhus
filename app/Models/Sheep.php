@@ -18,7 +18,7 @@ class Sheep extends Model
 
     public function breed()
     {
-        return $this->belongsTo(Breed::class, 'breed_id', 'id');
+        return $this->hasMany(Breed::class, 'breed_id', 'id');
     }
 
     public function sheepTreatments()
