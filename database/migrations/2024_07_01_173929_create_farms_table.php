@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('farms', function (Blueprint $table) {
             $table->id();
+            $table->string('slug', 100)->nullable();
             $table->unsignedBigInteger('foldtype_id');
             $table->foreign('foldtype_id')->references('id')->on('foldtypes')->restrictOnDelete();
             $table->unsignedBigInteger('sheep_id')->nullable();

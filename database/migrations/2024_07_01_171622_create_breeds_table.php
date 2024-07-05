@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('breeds', function (Blueprint $table) {
             $table->id();
+            $table->string('slug', 100)->nullable();
             $table->unsignedBigInteger('male_sheep_id')->nullable();
             $table->foreign('male_sheep_id')->references('id')->on('sheep')->nullOnDelete();
             $table->unsignedBigInteger('female_sheep_id')->nullable();
