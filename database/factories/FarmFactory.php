@@ -19,7 +19,6 @@ class FarmFactory extends Factory
         return [
             //
             'foldtype_id' => $this->faker->numberBetween(1, 3),
-            'sheep_id' => $this->faker->numberBetween(1, 10),
         ];
     }
 }
