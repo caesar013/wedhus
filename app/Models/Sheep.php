@@ -30,4 +30,9 @@ class Sheep extends Model
     {
         return $this->hasMany(SheepCare::class, 'sheep_id', 'id');
     }
+
+    public function getRouteKeyName()
+    {
+        return 'code';
+    }
 }

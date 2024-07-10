@@ -26,7 +26,7 @@ class Breed extends Model
     {
         return [
             'slug' => [
-                'source' => 'name'
+                'source' => 'maleSheep.code' . '-' . 'femaleSheep.code'
             ]
         ];
     }
