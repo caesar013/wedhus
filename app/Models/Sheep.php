@@ -11,9 +11,9 @@ class Sheep extends Model
 
     protected $guarded = [];
 
-    public function farm()
+    public function foldtype()
     {
-        return $this->belongsTo(Farm::class, 'farm_id', 'id');
+        return $this->belongsTo(Foldtype::class, 'foldtype_id', 'id');
     }
 
     public function breed()

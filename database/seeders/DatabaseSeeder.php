@@ -22,12 +22,10 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             UserSeeder::class,
-            FeedSeeder::class,
             CareSeeder::class,
             DiseaseSeeder::class,
             FoldtypeSeeder::class,
             TreatmentSeeder::class,
-            FarmSeeder::class,
             SheepSeeder::class,
             SheepCareSeeder::class,
             SheepTreatmentSeeder::class,

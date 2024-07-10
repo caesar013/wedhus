@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::table('sheep', function (Blueprint $table) {
             //
-            $table->foreign('farm_id')->references('id')->on('farms')->restrictOnDelete();
+            $table->unsignedBigInteger('foldtype_id')->nullable();
+            $table->foreign('foldtype_id')->references('id')->on('foldtypes')->restrictOnDelete();
         });
     }
 
@@ -24,6 +25,8 @@ return new class extends Migration
     {
         Schema::table('sheep', function (Blueprint $table) {
             //
+            $table->dropForeign(['foldtype_id']);
+            $table->dropColumn('foldtype_id');
         });
     }
 };

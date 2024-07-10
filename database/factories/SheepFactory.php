@@ -19,7 +19,7 @@ class SheepFactory extends Factory
         return [
             //
             'code' => $this->faker->unique()->word(),
-            'farm_id' => $this->faker->numberBetween(1, 3),
+            'foldtype_id' => $this->faker->numberBetween(1, 3),
             'sex' => $this->faker->numberBetween(0, 1),
             'status' => 'sehat',
             'weight' => $this->faker->randomFloat(1, 20, 100),

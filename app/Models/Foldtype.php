@@ -12,9 +12,9 @@ class Foldtype extends Model
 
     protected $guarded = [];
 
-    public function farm()
+    public function sheep()
     {
-        return $this->belongsTo(Farm::class, 'farm_id', 'id');
+        return $this->hasMany(Sheep::class, 'foldtype_id', 'id');
     }
 
     public function sluggable(): array
